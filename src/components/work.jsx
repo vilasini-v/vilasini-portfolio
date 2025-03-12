@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./header";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export function Work() {
   const internships = [
@@ -153,12 +154,118 @@ export function Work() {
     );
   };
 
+  const projects=[
+    {
+      name: "Better - a productivity app",
+      link: "https://github.com/vilasini-v/pink-better",
+      desc: 'Built a flutter app with local storage (hive) for productivity. Contains screens such as Notes Page, a Habit Tracker and a Weekly task view page.',
+      techStacks: "Flutter and hiveDB"
+    },
+    {
+      name:"Online Job Portal",
+      link:"https://github.com/vilasini-v/job_portal",
+      desc:"Building a portal to connect job seekers and clients, using ML for tailored job recommendations to the job seekers",
+      techStacks:"MongoDB, ReactJS, Flask, tailwind CSS"
+    },
+    {
+      name:"Personalized Online Mentor",
+      link:"https://github.com/Better-Mentor/frontend-cil",
+      desc:"Utilizing LLMs to generate comprehensive personalized reports of the tests taken, aiming for enhancing user learning outcomes, tracked through improved test completion rates.",
+      techStacks:"Django, Amazon RDS, ReactJS, tailwind CSS"
+    },
+      {
+      name:'Affirmations generator',
+      link:'https://affirmations-iota.vercel.app/',
+      desc:'A frontend project that generates affirmations with the option to share it to twitter/X.',
+      techStacks:"HTML, CSS, JavaScript"
+  },
+  {
+      name:'Arcade',
+      link:'https://arcade-navy.vercel.app/',
+      desc:'An arcade with mini games made with javascript such as rock-paper-scissors, coin-flip, and guess-the-number',
+      techStacks:"Javascript, HTML, CSS, React JS"
+  }
+  ];
+
+
+const ProjectCard = ({ title, description, url, details}) => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="max-w-md w-full p-4 shadow-lg rounded-2xl bg-avacado text-black border">
+        <div className="flex flex-col lg:flex-row justify-between w-full">
+          <h2 className="text-xl font-semibold text-black">{title}</h2>
+        <a href={url} className="underline text-gray-900 hover:text-blue-600">Check it out!</a>
+        </div>
+        <p className="text-sm text-gray-600">{description}</p>
+        {expanded && (
+          <p className="text-gray-700 py-2 text-md">Tech Stacks: {details}</p>
+      )}
+        <button
+          className="flex items-center justify-end py-2 rounded-lg text-gray-700 hover:text-beige"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "Show Less" : "Show More"}
+          {expanded ? <ChevronUp className="ml-2" /> : <ChevronDown className="ml-2" />}
+        </button>
+
+        
+    </div>
+  );
+};
+
+const ProjectList = ({ projects }) => {
+  const [showAll, setShowAll] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Check screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1024); // lg breakpoint (1024px)
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Decide how many projects to show
+  const displayedProjects = isSmallScreen && !showAll ? projects.slice(0, 2) : projects;
+
+  return (
+    <div className="flex flex-wrap p-4 gap-4 justify-center">
+      {displayedProjects.map((item, index) => (
+        <ProjectCard
+          key={index}
+          title={item.name}
+          description={item.desc}
+          url={item.link}
+          details={item.techStacks}
+        />
+      ))}
+
+      {/* Show button only on tablet/phone screens */}
+      {isSmallScreen && (
+        <div className="w-full flex justify-center mt-6">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="px-4 py-2 text-white rounded-md"
+        >
+          {showAll ? "Show Less" : "View More"}
+        </button>
+      </div>
+    )}
+  </div>
+  );
+};
+
+
   return (
     <>
       <Navbar color={"beige"} />
-      <section className="bg-algae text-white">
-        Projects
-      </section>
+      <section className="bg-algae text-white p-5">
+      <p className="text-3xl sm:text-4xl md:text-5xl text-white font-[hahmlet] mb-4 sm:mb-6">Projects</p>
+      <ProjectList projects = {projects}/>
+    </section>
       <section className="bg-beige text-black">
         <ProgressiveEducationCards list={internships} name="Internships" />
       </section>
