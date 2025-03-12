@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@theme {  
+  --color-algae: #5C7457;
+  --color-beige: #f0f0c9;  
+  --color-bermuda: #78dcca;
+  --color-avacado: #d0d494;
+}
