@@ -206,7 +206,7 @@ const ProfileCard = () => {
     <>
       <div className="flex flex-col w-full sm:w-3/4 md:flex-row md:justify-between md:w-full lg:flex-col lg:w-1/3 rounded-lg shadow-xs gap-2">
         <div className="bg-avacado border-2 border-gray-900 shadow-2xl rounded-full w-full max-w-xs mx-auto overflow-hidden aspect-square">
-          <img className="object-cover w-full h-full" src="/picture-no-bg.png" alt="picture of Vilasini Vijay" />
+          <img className="object-cover w-full h-full" src="./picture-no-bg.png" alt="picture of Vilasini Vijay" />
         </div>
         <div className="p-8 bg-black rounded-xl text-beige w-full">
           <h5 className="mb-2 text-xl text-white">contact me at</h5>
