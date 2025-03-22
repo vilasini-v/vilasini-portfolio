@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 
 export function Navbar({ color }) {
+  const handleOpenResume = () => {
+    window.open("https://drive.google.com/file/d/10jzILRPlsYj-PfCrSMz536zWhh8oysmz/view?usp=drive_link", "_blank");
+  };  
   return (
     <div
       className={`w-full p-4 ${
@@ -23,23 +26,13 @@ export function Navbar({ color }) {
           <Link className="text-2xl md:text-xl text-xs sm:text-xs" to="/">
             About Me
           </Link>
-          <Link className="text-2xl md:text-xl text-xs sm:text-xs" to="/resume">
-            Resume
+          <Link className="text-2xl md:text-xl text-xs sm:text-xs">
+            <button className="" onClick={handleOpenResume}>
+              Resume
+            </button>
           </Link>
           <Link className="text-2xl md:text-xl text-xs sm:text-xs" to="/work">
             Work
-          </Link>
-          <Link
-            className={`p-3 items-center rounded-3xl text-2xl md:text-xl text-xs sm:text-xs ${
-              color === "beige"
-                ? "bg-algae text-beige"
-                : color === "green"
-                ? "bg-beige text-algae"
-                : "bg-gray-500 text-black"
-            }`}
-            to="/contact"
-          >
-            Get in Touch
           </Link>
         </div>
       </div>
