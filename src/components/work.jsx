@@ -151,7 +151,7 @@ export function Work() {
           <div className="flex justify-end my-4">
             <button
               onClick={() => setShowAllCards(!showAllCards)}
-              className="px-4 py-2 text-avacado rounded-md text-sm font-medium hover:text-blue-400 transition-colors"
+              className="px-4 py-2 text-black rounded-md text-sm font-medium hover:text-blue-400 transition-colors"
             >
               {showAllCards ? "View Less" : `View All ${name}`}
             </button>
