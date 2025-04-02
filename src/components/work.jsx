@@ -5,15 +5,22 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 export function Work() {
   const internships = [
     {
+      name: "Samsung Prism",
+      year: "July 2024 - Feb 2025",
+      specs: "AI and ML Intern",
+      grade: "",
+      details: "Developed a state-of-the-art Transformer Architecture for Image Restoration and Detail Enhancement.",
+    },
+    {
       name: "Xencia Technologies",
-      year: "June 2024",
+      year: "June 2024 July 2024",
       specs: "Data Science Intern",
       grade: "",
       details: "Worked on projects with langchain, lang graph and open ai.",
     },
     {
       name: "Reverse Innovations",
-      year: "July 2024",
+      year: "July 2024 - Aug 2024",
       specs: "Software Research Intern",
       grade: "",
       details: "Worked with Flutter to produce a CRM application on the frontend side.",
