@@ -115,7 +115,7 @@ export function Work() {
                 <p className="text-gray-600 text-base sm:text-lg">{item.year}</p>
               </div>
 
-              <button className="py-1 text-white text-sm font-medium hover:text-blue-400 transition-colors">
+              <button className="py-1 text-avacado text-sm font-medium hover:text-blue-400 transition-colors">
                 {expandedCard === index ? "View Less" : "View More"}
               </button>
             </div>
@@ -255,7 +255,7 @@ const ProjectList = ({ projects }) => {
         <div className="w-full flex justify-center mt-6">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="px-4 py-2 text-white rounded-md"
+          className="px-4 py-2 text-algae rounded-md"
         >
           {showAll ? "Show Less" : "View More"}
         </button>
