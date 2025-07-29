@@ -5,6 +5,13 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 export function Work() {
   const internships = [
     {
+      name: "Samsung R&D",
+      year: "May 2025 - July 2025",
+      specs: "Developer Intern",
+      grade: "",
+      details: "Built a full-stack web application with a user-friendly GUI to input models and parameters, implementing post-training and quantization-aware techniques for model optimization.",
+    },
+    {
       name: "Samsung Prism",
       year: "July 2024 - Feb 2025",
       specs: "AI and ML Intern",
