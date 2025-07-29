@@ -55,7 +55,7 @@ const ProgressiveEducationCards = () => {
       name: 'Vellore Institute of Technology',
       year: '2022-2026',
       specs: 'Bachelors of Technology in Computer Science',
-      grade: '9.16/10',
+      grade: '9.14/10',
       details: 'Focusing on core computer science subjects including data structures, algorithms, operating systems, and software engineering principles.'
     },
     {
