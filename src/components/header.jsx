@@ -3,7 +3,7 @@ import StarRoundedIcon from "@mui/icons-material/StarRounded";
 
 export function Navbar({ color }) {
   const handleOpenResume = () => {
-    window.open("https://drive.google.com/file/d/1THJH3_batzQbNdDgIGb570bBlMC8LTFk/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/17jRERaPS4jkwnqJ6ZwrOxqgTYC6KUNd-/view?usp=sharing", "_blank");
   };  
   return (
     <div
